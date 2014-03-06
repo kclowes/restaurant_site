@@ -28,14 +28,12 @@ describe "Landing page" do
   it "displays a list of names for 5 dishes" do
     dishes = page.all('html body main ul li')
     dishes.length.must_equal 5
-
     dishes.each do |element|
       element.text.wont_equal ''
     end
   end
 
   it "displays the restaurant address in the footer" do
-    skip
     address = page.find('html body footer address')
     address.text.wont_equal ''
   end
